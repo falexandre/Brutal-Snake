@@ -37,7 +37,7 @@ function GameScene() {
 			Game.isPaused = true;
             Game.currentScene = new PauseMenuScene();
         }
-    }
+    };
 
     configureGameInput();
 }
@@ -48,7 +48,7 @@ function onEveryFrame(callback) {
 
     if (deltaTime > Game.updateRate) {
         //reset game update rate (used on eat event for prevent graphics bug)
-        if (tempGameUpdateRate != 0) {
+        if (tempGameUpdateRate !== 0) {
             Game.updateRate = clone(tempGameUpdateRate);
             tempGameUpdateRate = 0;
         }

@@ -18,7 +18,7 @@ BSConfig = {
         SelectedMenuItemBorderWidth: 2
     },
     SolidWall: false /*define if wall is solid*/
-}
+};
 
 //temp variable for save Game.updateRate value (used on snake eat event)
 var soundEfx = null, logoImg = null, nodeImg = null, backImg = null;
@@ -33,7 +33,7 @@ var Game = {
     initialize: function (width, height) {
         soundEfx = document.getElementById("soundEfx");
 
-		var canvas = createCanvasObject(width, height)
+		var canvas = createCanvasObject(width, height);
 
         this.context = canvas.getContext("2d");
         this.drawArea = canvas;
@@ -70,7 +70,7 @@ function configureBrutalSnake() {
 function Main() {
     Game.currentScene.Update();
 
-    if (Game.context != null) {
+    if (Game.context !== null) {
         Game.currentScene.Draw();
     }
 }
@@ -81,14 +81,14 @@ function Main() {
 
 //load all game resources
 function loadResources(callback) {
-    callback = callback || function () { }
+    callback = callback || function () { };
     var font = new Font();
 
     font.onload = function () {
         loadImages(["Resources/Images/" + BSConfig.Images.Skull, "Resources/Images/" + BSConfig.Images.MenuBackground, "Resources/Images/" + BSConfig.Images.GameLogo], function () {
             callback();
         });
-    }
+    };
 
     font.fontFamily = "silkscreen_expandednormal";
     font.src = font.fontFamily;
@@ -103,7 +103,7 @@ function loadImages(paths, whenLoaded) {
             imgs.push(img);
             setImage(img);
             if (imgs.length == paths.length) whenLoaded(imgs);
-        }
+        };
         img.src = path;
     });
 }
@@ -133,7 +133,7 @@ function work(interval, endTime, job) {
         job();
     }, interval);
 
-    if (endTime != null) {
+    if (endTime !== null) {
         setTimeout(function () {
             clearInterval(i);
         }, endTime);
