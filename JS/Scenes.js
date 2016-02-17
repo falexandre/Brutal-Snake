@@ -75,8 +75,8 @@ function configureGameInput(){
 		if (spacePressed && !Game.isPaused) {
 			Game.updateRate *= 2;
 			spacePressed = false;
-			
-			
+
+
 		}
         return false;
     }, 'keyup');
@@ -113,7 +113,7 @@ function configureGameInput(){
 		if(!spacePressed){
 			Game.currentScene.Pause();
 		}
-		
+
         return false;
     });
 }
